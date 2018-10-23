@@ -56,7 +56,7 @@ def nginx_off_slash():
                                 try:
                                     url = protocol + host + '/' + endpoint.strip ('/') + '../' + file
                                     r = requests.get (url, timeout=4.0, verify=False)
-                                    if r.status_code == 403:
+                                    if r.status_code == 200:
                                         print('[+] VULNERABLE ENDPOINT FOUND! \n '
                                               '{}'.format(url))
 
