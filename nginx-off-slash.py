@@ -64,17 +64,18 @@ def nginx_off_slash():
                                             results.write(url + '\n')
 
                                 except Exception:
-                                    pass
+                                    continue
+
 
                     # If first request returns anything else rather than 403, go to the next in loop.
                     else:
-                        break
+                        continue
 
             # Handle errors for all kind and flavors !
             except requests.exceptions.HTTPError as err:
                 # Ignore anything with 404 and 502 and loop to the next
                 if r.status_code == 404 or r.status_code == 502:
-                    break
+                    continue
 
             except requests.exceptions.ConnectionError:
                 continue
