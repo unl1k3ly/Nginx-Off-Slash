@@ -13,6 +13,11 @@ As an example, please, look at the following configuration alias code sample:
 
 As a result, I'll link a screenshot below that I believe is worth more than any textual explanation.
 
-![alt text][image.png]
+![Screenshot](image.png)
 
 Please, feel free to commit changes and open new issues.
+
+# TODO:
+ - Multi thread support
+ - Output colorful (coz, why not!)
+ - Profit ?
