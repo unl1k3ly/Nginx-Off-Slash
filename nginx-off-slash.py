@@ -95,13 +95,15 @@ if __name__ == '__main__':
         counter = 0
         for host in HOST_LIST:
             counter = counter + 1
-            print ("[{}] Trying {}".format (counter, host))
-            nginx_off_slash_vulnerable = nginx_off_slash(host)
+            try:
+                print ("[{}] Trying {}".format (counter, host))
+                nginx_off_slash_vulnerable = nginx_off_slash(host)
+            except Exception as err:
+                print ('[{}] Something went very wrong... Skipping... \n {}'.format (counter, err))
+                continue
 
     except KeyboardInterrupt:
         print('Okay, Exiting...')
         sys.exit(0)
 
-    except Exception as err:
-        print('[{}] Something went very wrong! \n {}'.format(counter, err))
-        pass
+
